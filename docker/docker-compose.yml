@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+
+  poc-structurizr:
+    image: structurizr/lite
+    container_name: poc-structurizr
+    ports:
+      - 8080:8080
+    volumes:
+      - ./volume/workspace.json:/usr/local/structurizr/workspace.json

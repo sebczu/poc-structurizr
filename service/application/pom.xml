@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>application</artifactId>
+
+  <parent>
+    <groupId>com.sebczu.poc.structurizr</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.0.1</version>
+    <relativePath>../parent</relativePath>
+  </parent>
+
+  <dependencies>
+    <!--EXTERNAL-->
+    <dependency>
+      <groupId>com.structurizr</groupId>
+      <artifactId>structurizr-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.structurizr</groupId>
+      <artifactId>structurizr-client</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>docker</artifactId>
+  <packaging>pom</packaging>
+
+  <parent>
+    <groupId>com.sebczu.poc.structurizr</groupId>
+    <artifactId>poc-structurizr</artifactId>
+    <version>0.0.1</version>
+  </parent>
+
+  <properties>
+    <docker-compose-maven-plugin.version>4.0.0</docker-compose-maven-plugin.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.dkanejs.maven.plugins</groupId>
+        <artifactId>docker-compose-maven-plugin</artifactId>
+        <version>${docker-compose-maven-plugin.version}</version>
+        <configuration>
+          <composeFile>${project.basedir}/docker-compose.yml</composeFile>
+          <detachedMode>true</detachedMode>
+          <envFile>${project.basedir}/.env</envFile>
+        </configuration>
+        <executions>
+          <execution>
+            <id>up</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>up</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
